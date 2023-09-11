@@ -12,6 +12,7 @@ api_v1.register(
     basename='comments'
 )
 api_v1.register('groups', GroupViewSet, basename='groups')
+
 api_v1.register('follow', FollowViewSet, basename='follows')
 
 urlpatterns = [
