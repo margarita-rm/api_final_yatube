@@ -51,6 +51,8 @@ class CommentViewSet(viewsets.ModelViewSet):
 class FollowViewSet(mixins.ListModelMixin,
                     mixins.CreateModelMixin,
                     viewsets.GenericViewSet):
+    """Вьюсет для работы с объектами модели Follow."""
+
     serializer_class = FollowSerializer
     permission_classes = (permissions.IsAuthenticated,)
     filter_backends = (filters.SearchFilter,)
@@ -61,5 +63,4 @@ class FollowViewSet(mixins.ListModelMixin,
 
     def perform_create(self, serializer):
         if serializer.is_valid():
-            following_user = serializer.validated_data["following"]
-            serializer.save(user=self.request.user, following=following_user)
+            serializer.save(user=self.request.user)
