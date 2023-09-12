@@ -62,5 +62,4 @@ class FollowViewSet(mixins.ListModelMixin,
         return self.request.user.follower.all()
 
     def perform_create(self, serializer):
-        if serializer.is_valid():
-            serializer.save(user=self.request.user)
+        serializer.save(user=self.request.user)
