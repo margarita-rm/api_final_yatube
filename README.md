@@ -20,6 +20,7 @@ python manage.py runserver
 ## Примеры запросов к API:
 #### Запрос JWT токена с использованием логина и пароля пользователя Admin:
   [POST].../api/v1/jwt/create/
+  
 {
   
     "username": "Admin",
