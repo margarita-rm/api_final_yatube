@@ -12,11 +12,9 @@ api_v1.register(
     basename='comments'
 )
 api_v1.register('groups', GroupViewSet, basename='groups')
-
 api_v1.register('follow', FollowViewSet, basename='follows')
 
 urlpatterns = [
     path('v1/', include(api_v1.urls)),
-    path("v1/", include("djoser.urls")),
-    path("v1/", include("djoser.urls.jwt")),
+    path('v1/', include('djoser.urls.jwt')),
 ]
